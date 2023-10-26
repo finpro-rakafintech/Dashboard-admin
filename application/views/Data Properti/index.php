@@ -2,7 +2,7 @@
     <div class="main-content">
         <section class="section">
             <h2 class="mb-3">Data Properti</h2>
-            <a href="tambahdata.html" class="btn btn-icon icon-left btn-success">
+            <a href="<?= site_url('TambahdataController')?>" class="btn btn-icon icon-left btn-success">
                 <i class="fas fa-plus"></i> Tambah Properti Baru
             </a>
             <div class="row g-5 justify-content-center mt-4">
@@ -10,7 +10,7 @@
                         <div class="card card-info">
                             <div class="card-body">
                                 <div class="text-center">
-                                    <img src="template/assets/img/995.jpg" width="300" height="200">
+                                    <img src="<?= base_url('assets/');?>template/img/995.jpg" width="300" height="200">
                                 </div>
                                 <h6 class="card-title fw-bold mt-3">Rose House</h6>
                                 <div class="d-flex justify-content-between align-items-center">
@@ -22,8 +22,8 @@
                                 </p>
                                 </div>
                                 <hr class="fw-bold border-1">
-                                <a href="detailadmin.html" class="btn btn-icon icon-left btn-info"><i class="fas fa-info-circle"></i> Info</a>
-                                <a href="editdata.html" class="btn btn-icon icon-left btn-primary"><i class="far fa-edit"></i> Edit</a>
+                                <a href="<?= site_url('DataPropertiController/detailadmin')?>" class="btn btn-icon icon-left btn-info"><i class="fas fa-info-circle"></i> Info</a>
+                                <a href="<?= site_url('DataPropertiController/editdata')?>" class="btn btn-icon icon-left btn-primary"><i class="far fa-edit"></i> Edit</a>
                                 <button class="btn btn-icon icon-left btn-danger"><i class="fas fa-times"></i> Delete</button>
                             </div>
                         </div>
@@ -32,7 +32,7 @@
                         <div class="card card-info">
                             <div class="card-body">
                                 <div class="text-center">
-                                    <img src="template/assets/img/995.jpg" width="300" height="200">
+                                    <img src="<?= base_url('assets/');?>template/img/995.jpg" width="300" height="200">
                                 </div>
                                 <h6 class="card-title fw-bold mt-3">Rose House</h6>
                                 <div class="d-flex justify-content-between align-items-center">
@@ -44,8 +44,8 @@
                                 </p>
                                 </div>
                                 <hr class="fw-bold border-1">
-                                <a href="detailadmin.html" class="btn btn-icon icon-left btn-info"><i class="fas fa-info-circle"></i> Info</a>
-                                <a href="editdata.html" class="btn btn-icon icon-left btn-primary"><i class="far fa-edit"></i> Edit</a>
+                                <a href="<?= site_url('DetailadminController')?>" class="btn btn-icon icon-left btn-info"><i class="fas fa-info-circle"></i> Info</a>
+                                <a href="<?= site_url('EditDataController')?>" class="btn btn-icon icon-left btn-primary"><i class="far fa-edit"></i> Edit</a>
                                 <button class="btn btn-icon icon-left btn-danger"><i class="fas fa-times"></i> Delete</button>
                             </div>
                         </div>
@@ -54,7 +54,7 @@
                         <div class="card card-info">
                             <div class="card-body">
                                 <div class="text-center">
-                                    <img src="template/assets/img/995.jpg" width="300" height="200">
+                                    <img src="<?= base_url('assets/');?>template/img/995.jpg" width="300" height="200">
                                 </div>
                                 <h6 class="card-title fw-bold mt-3">Rose House</h6>
                                 <div class="d-flex justify-content-between align-items-center">
@@ -66,8 +66,8 @@
                                 </p>
                                 </div>
                                 <hr class="fw-bold border-1">
-                                <a href="detailadmin.html" class="btn btn-icon icon-left btn-info"><i class="fas fa-info-circle"></i> Info</a>
-                                <a href="editdata.html" class="btn btn-icon icon-left btn-primary"><i class="far fa-edit"></i> Edit</a>
+                                <a href="<?= site_url('DetailadminController')?>" class="btn btn-icon icon-left btn-info"><i class="fas fa-info-circle"></i> Info</a>
+                                <a href="<?= site_url('EditDataController')?>" class="btn btn-icon icon-left btn-primary"><i class="far fa-edit"></i> Edit</a>
                                 <button class="btn btn-icon icon-left btn-danger"><i class="fas fa-times"></i> Delete</button>
                             </div>
                         </div>
@@ -76,7 +76,7 @@
                         <div class="card card-info">
                             <div class="card-body">
                                 <div class="text-center">
-                                    <img src="template/assets/img/995.jpg" width="300" height="200">
+                                    <img src="<?= base_url('assets/');?>template/img/995.jpg" width="300" height="200">
                                 </div>
                                 <h6 class="card-title fw-bold mt-3">Rose House</h6>
                                 <div class="d-flex justify-content-between align-items-center">
@@ -88,8 +88,8 @@
                                 </p>
                                 </div>
                                 <hr class="fw-bold border-1">
-                                <a href="detailadmin.html" class="btn btn-icon icon-left btn-info"><i class="fas fa-info-circle"></i> Info</a>
-                                <a href="editdata.html" class="btn btn-icon icon-left btn-primary"><i class="far fa-edit"></i> Edit</a>
+                                <a href="<?= site_url('DetailadminController')?>" class="btn btn-icon icon-left btn-info"><i class="fas fa-info-circle"></i> Info</a>
+                                <a href="<?= site_url('EditDataController')?>" class="btn btn-icon icon-left btn-primary"><i class="far fa-edit"></i> Edit</a>
                                 <button class="btn btn-icon icon-left btn-danger"><i class="fas fa-times"></i> Delete</button>
                             </div>
                         </div>
@@ -98,7 +98,7 @@
                         <div class="card card-info">
                             <div class="card-body">
                                 <div class="text-center">
-                                    <img src="template/assets/img/995.jpg" width="300" height="200">
+                                    <img src="<?= base_url('assets/');?>template/img/995.jpg" width="300" height="200">
                                 </div>
                                 <h6 class="card-title fw-bold mt-3">Rose House</h6>
                                 <div class="d-flex justify-content-between align-items-center">
@@ -110,8 +110,8 @@
                                 </p>
                                 </div>
                                 <hr class="fw-bold border-1">
-                                <a href="detailadmin.html" class="btn btn-icon icon-left btn-info"><i class="fas fa-info-circle"></i> Info</a>
-                                <a href="editdata.html" class="btn btn-icon icon-left btn-primary"><i class="far fa-edit"></i> Edit</a>
+                                <a href="<?= site_url('DetailadminController')?>" class="btn btn-icon icon-left btn-info"><i class="fas fa-info-circle"></i> Info</a>
+                                <a href="<?= site_url('EditDataController')?>" class="btn btn-icon icon-left btn-primary"><i class="far fa-edit"></i> Edit</a>
                                 <button class="btn btn-icon icon-left btn-danger"><i class="fas fa-times"></i> Delete</button>
                             </div>
                         </div>
@@ -120,7 +120,7 @@
                         <div class="card card-info">
                             <div class="card-body">
                                 <div class="text-center">
-                                    <img src="template/assets/img/995.jpg" width="300" height="200">
+                                    <img src="<?= base_url('assets/');?>template/img/995.jpg" width="300" height="200">
                                 </div>
                                 <h6 class="card-title fw-bold mt-3">Rose House</h6>
                                 <div class="d-flex justify-content-between align-items-center">
@@ -132,8 +132,8 @@
                                 </p>
                                 </div>
                                 <hr class="fw-bold border-1">
-                                <a href="detailadmin.html" class="btn btn-icon icon-left btn-info"><i class="fas fa-info-circle"></i> Info</a>
-                                <a href="editdata.html" class="btn btn-icon icon-left btn-primary"><i class="far fa-edit"></i> Edit</a>
+                                <a href="<?= site_url('DetailadminController')?>" class="btn btn-icon icon-left btn-info"><i class="fas fa-info-circle"></i> Info</a>
+                                <a href="<?= site_url('EditDataController')?>" class="btn btn-icon icon-left btn-primary"><i class="far fa-edit"></i> Edit</a>
                                 <button class="btn btn-icon icon-left btn-danger"><i class="fas fa-times"></i> Delete</button>
                             </div>
                         </div>

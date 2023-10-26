@@ -20,6 +20,23 @@ class DataPropertiController extends CI_Controller{
 		$this->load->view('layout/footer');
     }
 
+    function detailadmin()
+    {
+        $this->load->view('layout/header');
+        $this->load->view('layout/navbar');
+        $this->load->view('layout/sidebar');
+        $this->load->view('Data Properti/detailadmin');
+		$this->load->view('layout/footer');
+    }
+    function editdata()
+    {
+        $this->load->view('layout/header');
+        $this->load->view('layout/navbar');
+        $this->load->view('layout/sidebar');
+        $this->load->view('Data Properti/editdata');
+		$this->load->view('layout/footer');
+    }
+
 
 }
 

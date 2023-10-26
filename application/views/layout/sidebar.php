@@ -2,7 +2,7 @@
 <div class="main-sidebar sidebar-style-2">
                 <aside id="sidebar-wrapper">
                     <div class="sidebar-brand">
-                        <a href="dashboard.html"> <img
+                        <a href="<?= site_url('DashboardController')?>"> <img
                                 alt="image"
                                 src="<?= base_url('assets/')?>template/img/logoR.png" 
                                 class="header-logo" />

@@ -13,7 +13,7 @@
                                             <h3 class="font-20">Jumlah Data Properti</h3>
                                             <h2 class="mb-3 font-18">20
                                             </h2>
-                                            <a href="" 
+                                            <a href="<?= site_url('DatapropertiController')?>" 
                                                 class="btn btn-icon icon-left btn-info"><i
                                                     class="fas fa-info-circle"></i> Lihat
                                                 Detail</a>
@@ -21,7 +21,7 @@
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
                                         <div class="banner-img">
-                                            <img src="template/assets/img/banner/1.png"
+                                            <img src="<?= base_url('assets/');?>template/img/banner/1.png"
                                                 alt="">
                                         </div>
                                     </div>
@@ -40,7 +40,7 @@
                                         <div class="card-content">
                                             <h3 class="font-20">Jumlah User</h3>
                                             <h2 class="mb-3 font-18">10</h2>
-                                            <a href=""
+                                            <a href="<?= site_url('DatauserController')?>"
                                                 class="btn btn-icon icon-left btn-info"><i
                                                     class="fas fa-info-circle"></i> Lihat
                                                 Detail</a>
@@ -48,7 +48,7 @@
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
                                         <div class="banner-img">
-                                            <img src="template/assets/img/banner/3.png"
+                                            <img src="<?= base_url('assets/');?>template/img/banner/3.png"
                                                 alt="">
                                         </div>
                                     </div>
