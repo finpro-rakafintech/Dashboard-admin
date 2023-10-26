@@ -6,6 +6,7 @@
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
     <title>Admin Dashboard</title>
     <!-- Template CSS -->
+    <link rel="icon" href="<?= base_url('assets/theme'); ?>/logo.png">
     <link rel="stylesheet" href="<?=base_url()?>assets/template/css/style.css">
     <link rel="stylesheet" href="<?=base_url()?>assets/template/css/components.css">
     <!-- Custom style CSS -->
