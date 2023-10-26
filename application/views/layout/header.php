@@ -6,16 +6,16 @@
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
     <title>Admin Dashboard</title>
     <!-- Template CSS -->
-    <link rel="stylesheet" href="template/assets/css/style.css">
-    <link rel="stylesheet" href="template/assets/css/components.css">
+    <link rel="stylesheet" href="<?=base_url()?>assets/template/css/style.css">
+    <link rel="stylesheet" href="<?=base_url()?>assets/template/css/components.css">
     <!-- Custom style CSS -->
-    <link rel="stylesheet" href="template/assets/css/custom.css">
-    <link rel="stylesheet" href="template/assets/css/app.min.css">
+    <link rel="stylesheet" href="<?=base_url()?>assets/template/css/custom.css">
+    <link rel="stylesheet" href="<?=base_url()?>assets/template/css/app.min.css">
     <!-- Template CSS -->
-    <link rel="stylesheet" href="template/assets/css/style.css">
-    <link rel="stylesheet" href="template/assets/css/components.css">
+    <link rel="stylesheet" href="<?=base_url()?>assets/template/css/style.css">
+    <link rel="stylesheet" href="<?=base_url()?>assets/template/css/components.css">
     <!-- Custom style CSS -->
-    <link rel="stylesheet" href="template/assets/css/custom.css">
+    <link rel="stylesheet" href="<?=base_url()?>assets/template/css/custom.css">
 </head>
 
 <body>
