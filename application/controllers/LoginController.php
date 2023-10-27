@@ -19,7 +19,7 @@ class LoginController extends CI_Controller{
     }
 
 
-	public function sign_in()
+	public function login()
 	{
 		$email = htmlspecialchars($this->input->post('email', TRUE), ENT_QUOTES);
 		$password = htmlspecialchars($this->input->post('password', TRUE), ENT_QUOTES);
@@ -52,13 +52,13 @@ class LoginController extends CI_Controller{
 				}
 			} else {
 				// Password salah
-				$url = site_url('login_page');
+				$url = base_url();
 				echo $this->session->set_flashdata('msg', 'Email atau Password Salah');
 				redirect($url);
 			}
 		} else {
 			// Email tidak ditemukan
-			$url = site_url('login_page');
+			$url = base_url();
 			echo $this->session->set_flashdata('msg', 'Email Tidak Ditemukan');
 			redirect($url);
 		}
