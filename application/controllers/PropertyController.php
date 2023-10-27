@@ -16,7 +16,7 @@ class PropertyController extends CI_Controller{
 		$this->load->view('layout/header');
         $this->load->view('layout/navbar');
         $this->load->view('layout/sidebar');
-        $this->load->view('Data Properti/index');
+        $this->load->view('data_property/index');
 		$this->load->view('layout/footer');
     }
 
@@ -25,7 +25,7 @@ class PropertyController extends CI_Controller{
         $this->load->view('layout/header');
         $this->load->view('layout/navbar');
         $this->load->view('layout/sidebar');
-        $this->load->view('Data Properti/detailadmin');
+        $this->load->view('data_property/detailadmin');
 		$this->load->view('layout/footer');
     }
     function editdata()
@@ -33,7 +33,7 @@ class PropertyController extends CI_Controller{
         $this->load->view('layout/header');
         $this->load->view('layout/navbar');
         $this->load->view('layout/sidebar');
-        $this->load->view('Data Properti/editdata');
+        $this->load->view('data_property/editdata');
 		$this->load->view('layout/footer');
     }
 
