@@ -22,7 +22,7 @@
                             <form action="do_login" method="post">
                                 <div class="form-group">
                                     <label for="email">Email</label>
-                                    <input id="email" type="email" class="form-control" name="email" placeholder="info@rakafintech.com" tabindex="1" required="" autofocus="">
+                                    <input id="email" type="email" class="form-control" name="email" placeholder="info@rakafintech.com" tabindex="1"autocomplete="off">
                                     <div class="invalid-feedback">
                                         Please fill in your email
                                     </div>
