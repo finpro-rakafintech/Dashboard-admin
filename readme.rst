@@ -1,4 +1,13 @@
 ###################
+Raka Fintech Admin V1.0.0
+###################
+Raka Fintech merupakan platform berbasis web yang memudahkan Nasabah dalam proses pembelian KPR 
+(Kredit Pemilikan Rumah) dan simulasi KPR. Raka Fintech hadir untuk mewujudkan impian Nasabah memiliki 
+rumah/tanah impian dengan solusi keuangan yang tepat.
+
+
+
+###################
 What is CodeIgniter
 ###################
 
@@ -69,3 +78,5 @@ Acknowledgement
 
 The CodeIgniter team would like to thank EllisLab, all the
 contributors to the CodeIgniter project and you, the CodeIgniter user.
+
+
