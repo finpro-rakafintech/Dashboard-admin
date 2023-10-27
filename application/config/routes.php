@@ -51,10 +51,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $route['default_controller'] = 'LoginController';
 
-$route['do_login'] = 'LoginController/login';
-$route['home'] = 'PagesController/index';
+$route['sign_in'] = 'LoginController/login';
 
+$route['home'] = 'DashboardController/index';
 
+// Router Data Property
+$route['view_property'] = 'PropertyController';
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

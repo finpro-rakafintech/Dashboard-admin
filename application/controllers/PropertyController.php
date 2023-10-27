@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class DataPropertiController extends CI_Controller{
+class PropertyController extends CI_Controller{
 
     // public function __construct()
 	// {
