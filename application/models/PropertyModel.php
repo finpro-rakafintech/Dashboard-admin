@@ -11,9 +11,13 @@ class PropertyModel extends CI_Model
         return $result->total_property;
     }
 
-    public function getProperty()
-    {
-        return $this->db->get('product');
+    public function getProperty($limit, $offset) {
+        $query = $this->db->get('product', $limit, $offset);
+        return $query;
+    }
+
+    public function countProperty() {
+        return $this->db->count_all('product');
     }
 }
 
