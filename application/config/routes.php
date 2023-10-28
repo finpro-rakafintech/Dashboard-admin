@@ -9,6 +9,10 @@ $route['home'] = 'DashboardController/index';
 
 // Route Data Property
 $route['view_property'] = 'PropertyController';
+$route['page_create'] = 'PropertyController/page_create';
+$route['page_update'] = 'PropertyController/page_update';
+$route['create_property'] = 'PropertyController/action_add';
+$route['delete_property/(:any)'] = 'PropertyController/action_delete';
 
 
 // Route Data User
