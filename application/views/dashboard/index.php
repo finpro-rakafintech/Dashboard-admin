@@ -10,7 +10,7 @@
                                     <div class="card-content">
                                         <h3 class="font-20">Jumlah Data Properti</h3>
                                         <h2 class="mb-3 font-18"><?php echo $jumlah_property; ?></h2>
-                                        <a href="<?= site_url('DatapropertiController') ?>" class="btn btn-icon icon-left btn-info"><i class="fas fa-info-circle"></i> Lihat
+                                        <a href="<?= site_url('view_property') ?>" class="btn btn-icon icon-left btn-info"><i class="fas fa-info-circle"></i> Lihat
                                             Detail</a>
                                     </div>
                                 </div>
@@ -33,7 +33,7 @@
                                     <div class="card-content">
                                         <h3 class="font-20">Jumlah Nasabah</h3>
                                         <h2 class="mb-3 font-18"><?php echo $jumlah_nasabah; ?></h2>
-                                        <a href="<?= site_url('DatauserController') ?>" class="btn btn-icon icon-left btn-info"><i class="fas fa-info-circle"></i> Lihat
+                                        <a href="<?= site_url('view_user') ?>" class="btn btn-icon icon-left btn-info"><i class="fas fa-info-circle"></i> Lihat
                                             Detail</a>
                                     </div>
                                 </div>
