@@ -35,17 +35,17 @@ class LoginController extends CI_Controller{
 
 				$this->session->set_userdata($data_session);
 
-				if ($cek_level['level'] == 'admin') {
-					// Akses admin
+				if ($cek_level['level'] == 'super_admin') {
+					// Akses super admin
 					$this->session->set_userdata('masuk', TRUE);
-					$this->session->set_userdata('akses', 'admin');
+					$this->session->set_userdata('role', 'super_admin');
 					$this->session->set_userdata('ses_email', $cek_level['email']);
-					$this->session->set_userdata('ses_nama', $cek_level['nama_admin']);
+					$this->session->set_userdata('ses_nama', $cek_level['nama_user']);
 					redirect('home');
 				} else {
-					// Akses User
+					// Akses admin
 					$this->session->set_userdata('masuk', TRUE);
-					$this->session->set_userdata('akses', 'user');
+					$this->session->set_userdata('role', 'admin');
 					$this->session->set_userdata('ses_email', $cek_level['email']);
 					$this->session->set_userdata('ses_nama', $cek_level['nama_user']);
 					redirect('home');
@@ -64,6 +64,13 @@ class LoginController extends CI_Controller{
 		}
 	}
 
+	public function logout(){
+		$this->session->sess_destroy();
+		
+		$url = base_url();
+		redirect($url);
+	}
+	
 }
 
 ?>
