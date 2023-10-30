@@ -96,6 +96,61 @@ class PropertyController extends CI_Controller{
         redirect('view_property');
     }
 
+    public function page_update()
+    {
+        $id_prt = $this->uri->segment(2);
+
+        $this->db->where('product_id', $id_prt);
+        $cek = $this->db->get('product');
+
+        if ($cek->num_rows() > 0) {
+            foreach ($cek->result() as $row){
+                $data = array(
+                    $this->load->view('layout/header'),
+                    $this->load->view('layout/navbar'),
+                    $this->load->view('layout/sidebar'),
+                    'id_prt' => $row->product_id,
+                    'nm_prt' => $row->nm_product,
+                    'ls_bgn' => $row->luas_bangunan,
+                    'ls_tnh' => $row->luas_tanah,
+                    'j_kmrtidur' => $row->jum_kamartidur,
+                    'j_kmrmandi' => $row->jum_kamarmandi,
+                    'j_garasi' => $row->jum_garasi,
+                    'dsc' => $row->description,
+                    'prc' => $row->price,
+                );
+            }
+        }
+
+        $this->load->view('data_property/update', $data);
+        $this->load->view('layout/footer');
+    }
+
+    public function action_edit()
+    {
+        $get_edit = array(
+            'id_prt' => $this->input->post('id_prt'),
+            'nm_property' => $this->input->post('nm_property'),
+            'ls_tanah' => $this->input->post('ls_tanah'),
+            'ls_bangunan' => $this->input->post('ls_bangunan'),
+            'jum_kamartidur' => $this->input->post('jum_kamartidur'),
+            'jum_kamarmandi' => $this->input->post('jum_kamarmandi'),
+            'jum_garasi' => $this->input->post('jum_garasi'),
+            'price' => $this->input->post('price'),
+            'deskripsi' => $this->input->post('deskripsi'),
+        );
+
+        $result = $this->PropertyModel->get_edit($get_edit);
+
+        if ($result) {
+            $this->session->set_flashdata('success', 'Update Data, Success!');
+        } else {
+            $this->session->set_flashdata('failed', 'Update Data, Failed!');
+        }
+
+        redirect('view_property');
+    }
+
     public function action_delete()
     {
         $id_product = $this->uri->segment(2);

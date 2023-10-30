@@ -55,7 +55,7 @@
                                     </div>
 
                                     <button class="btn btn-primary mr-1" type="submit">Submit</button>
-                                    <button class="btn btn-warning" type="reset">Reset</button>
+                                    <button class="btn btn-danger" type="reset">Reset</button>
                                 </div>
                             </div>
                         </form>

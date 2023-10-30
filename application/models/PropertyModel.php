@@ -40,21 +40,50 @@ class PropertyModel extends CI_Model
         }
     }
 
+    public function get_edit($get_edit)
+    {
+        $cek_id = array(
+            'product_id' => $get_edit['id_prt'],
+        );
+
+        $data = array(
+            'nm_product' => $get_edit['nm_property'],
+            'luas_tanah' => $get_edit['ls_tanah'],
+            'luas_bangunan' => $get_edit['ls_bangunan'],
+            'jum_kamartidur' => $get_edit['jum_kamartidur'],
+            'jum_kamarmandi' => $get_edit['jum_kamarmandi'],
+            'jum_garasi' => $get_edit['jum_garasi'],
+            'price' => $get_edit['price'],
+            'description' => $get_edit['deskripsi'],
+        );
+
+        $this->db->where($cek_id);
+        $query = $this->db->get('product');
+
+        if ($query->num_rows() > 0) {
+            $this->db->set($data);
+            $this->db->where($cek_id);
+            $this->db->update('product');
+            return 1;
+        } else {
+            $this->db->update('product', $data);
+            return 0;
+        }
+    }
+
     public function get_delete($data_property)
     {
         $cek['id'] = $data_property;
 
         $data = array(
-            'product_id' => $data_property['id'],
-            'nm_product' => $data_property['nm_prt'],
-            'luas_tanah' => $data_property['ls_tanah'],
-            'luas_bangunan' => $data_property['ls_bangunan'],
-            'jum_kamartidur' => $data_property['j_kmrtidur'],
-            'jum_kamarmandi' => $data_property['j_kmrmandi'],
-            'jum_garasi' => $data_property['j_garasi'],
-            'description' => $data_property['dsc'],
-            'price' => $data_property['price'],
-            'type' => $data_property['type'],
+            'nm_product' => $this->input->post('nm_property'),
+            'luas_tanah' => $this->input->post('ls_tanah'),
+            'luas_bangunan' => $this->input->post('ls_bangunan'),
+            'jum_kamartidur' => $this->input->post('jum_kamartidur'),
+            'jum_kamarmandi' => $this->input->post('jum_kamarmandi'),
+            'jum_garasi' => $this->input->post('jum_garasi'),
+            'price' => $this->input->post('price'),
+            'description' => $this->input->post('deskripsi'),
         );
 
         $this->db->where($data);

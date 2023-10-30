@@ -16,7 +16,7 @@
             </div>
         <?php endif; ?>
         <h2 class="mb-3">Data Properti</h2>
-        <a href="<?= base_url('page_create'); ?>" class="btn btn-icon icon-left btn-success">
+        <a href="<?=base_url('page_create'); ?>" class="btn btn-icon icon-left btn-success">
             <i class="fas fa-plus"></i> Tambah Properti Baru
         </a>
 
@@ -39,7 +39,7 @@
                             </div>
                             <hr class="fw-bold border-1">
                             <a href="<?= site_url('DataPropertiController/detailadmin') ?>" class="btn btn-icon icon-left btn-info"><i class="fas fa-info-circle"></i> Info</a>
-                            <a href="<?= site_url('DataPropertiController/editdata') ?>" class="btn btn-icon icon-left btn-primary"><i class="far fa-edit"></i> Edit</a>
+                            <a href="<?php echo base_url('page_update/' . $row->product_id); ?>" class="btn btn-icon icon-left btn-primary"><i class="far fa-edit"></i> Edit</a>
                             <a href="<?php echo base_url('delete_property/' . $row->product_id); ?>" class="btn btn-icon icon-left btn-danger"><i class="fas fa-times"></i> Delete</a>
                         </div>
                     </div>
