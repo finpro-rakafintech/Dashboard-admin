@@ -5,7 +5,7 @@
                 <div class="card">
                     <div class="card-header mt-3">
                         <h4>
-                            Data User
+                            Data Nasabah
                         </h4>
                         <div class="card-header-form">
                             <div class="input-group">
@@ -17,20 +17,21 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <?php if ($this->session->userdata('role') == 'super_admin') { ?>
                             <a href="<?= base_url('page_create_user'); ?>" class="btn btn-icon icon-left btn-success mb-3">
-                                <i class="fas fa-plus"></i> Add User
+                                <i class="fas fa-plus"></i> Add Nasabah
                             </a>
-                        <?php } ?>
                         <div class="table-responsive">
                             <table class="table table-striped" id="table-1">
                                 <thead>
                                     <tr>
                                         <th class="text-center">No.</th>
-                                        <th>Email</th>
-                                        <th>Password</th>
                                         <th>Nama Lengkap</th>
-                                        <th>Tgl Lahir</th>
+                                        <th>Phone Number</th>
+                                        <th>NIK</th>
+                                        <th>No. Kredit</th>
+                                        <th>NPWP</th>
+                                        <th>Income</th>
+                                        <th>Outcome</th>
                                         <?php if ($this->session->userdata('role') == 'super_admin') { ?>
                                             <th>Action</th>
                                         <?php } ?>
@@ -38,22 +39,32 @@
                                 </thead>
                                 <tbody>
                                     <?php $no = 1;
-                                    foreach ($v_user->result() as $row) { ?>
+                                    foreach ($v_nasabah->result() as $row) { ?>
                                         <tr>
                                             <th scope="row">
                                                 <?php echo $no++; ?>
                                             </th>
                                             <td>
-                                                <?php echo $row->email; ?>
+                                                <?php echo $row->firstname; ?>
+                                                <?php echo $row->lastname; ?>
                                             </td>
                                             <td>
-                                                <?php echo $row->password; ?>
+                                                <?php echo $row->phone_number; ?>
                                             </td>
                                             <td>
-                                                <?php echo $row->fullname; ?>
+                                                <?php echo $row->nik; ?>
                                             </td>
                                             <td>
-                                                <?php echo $row->birthdate; ?>
+                                                <?php echo $row->no_kredit; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $row->npwp; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $row->income; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $row->outcome; ?>
                                             </td>
                                             <?php if ($this->session->userdata('role') == 'super_admin') { ?>
                                                 <td>
