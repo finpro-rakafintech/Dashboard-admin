@@ -19,7 +19,7 @@
                         <a class="nav-link" href="<?=base_url('view_user') ?>">Data User</a>
                     </li>
                     <li>
-                        <a class="nav-link" href="<?=base_url('view_user') ?>">Data Nasabah</a>
+                        <a class="nav-link" href="<?=base_url('view_nasabah') ?>">Data Nasabah</a>
                     </li>
                 </ul>
             </li>

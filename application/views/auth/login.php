@@ -22,7 +22,7 @@
                             <form action="sign_in" method="post">
                                 <div class="form-group">
                                     <label for="email">Email</label>
-                                    <input id="email" type="email" class="form-control" name="email" placeholder="info@rakafintech.com" tabindex="1" autocomplete="off">
+                                    <input id="email" type="email" class="form-control" name="email" placeholder="Email address" tabindex="1" autocomplete="off">
                                     <div class="invalid-feedback">
                                         Please fill in your email
                                     </div>
@@ -36,7 +36,7 @@
                                             </a>
                                         </div>
                                     </div>
-                                    <input id="password" type="password" class="form-control" name="password" tabindex="2" autocomplete="off">
+                                    <input id="password" type="password" class="form-control" name="password" placeholder="Password" tabindex="2" autocomplete="off">
                                     <div class="invalid-feedback">
                                         please fill in your password
                                     </div>

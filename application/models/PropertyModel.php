@@ -71,26 +71,15 @@ class PropertyModel extends CI_Model
         }
     }
 
-    public function get_delete($data_property)
+    public function get_delete($id_property)
     {
-        $cek['id'] = $data_property;
+        $cek['product_id'] = $id_property;
 
-        $data = array(
-            'nm_product' => $this->input->post('nm_property'),
-            'luas_tanah' => $this->input->post('ls_tanah'),
-            'luas_bangunan' => $this->input->post('ls_bangunan'),
-            'jum_kamartidur' => $this->input->post('jum_kamartidur'),
-            'jum_kamarmandi' => $this->input->post('jum_kamarmandi'),
-            'jum_garasi' => $this->input->post('jum_garasi'),
-            'price' => $this->input->post('price'),
-            'description' => $this->input->post('deskripsi'),
-        );
-
-        $this->db->where($data);
+        $this->db->where($cek);
         $query = $this->db->get('product');
 
         if ($query->num_rows() > 0) {
-            $this->db->where($data);
+            $this->db->where($cek);
             $this->db->delete('product');
             return 1;
         } else {

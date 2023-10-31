@@ -153,29 +153,9 @@ class PropertyController extends CI_Controller{
 
     public function action_delete()
     {
-        $id_product = $this->uri->segment(2);
+        $id_property = $this->uri->segment(2);
 
-        $this->db->where('product_id', $id_product);
-        $cek = $this->db->get('product');
-
-        if ($cek->num_rows() > 0) {
-            foreach ($cek->result() as $row){
-                $data_property = array(
-                    'id' => $row->product_id,
-                    'nm_prt' => $row->nm_product,
-                    'ls_tanah' => $row->luas_tanah,
-                    'ls_bangunan' => $row->luas_bangunan,
-                    'j_kmrtidur' => $row->jum_kamartidur,
-                    'j_kmrmandi' => $row->jum_kamarmandi,
-                    'j_garasi' => $row->jum_garasi,
-                    'dsc' => $row->description,
-                    'price' => $row->price,
-                    'type' => $row->type,
-                );
-            }
-        }
-
-        $result = $this->PropertyModel->get_delete($data_property);
+        $result = $this->PropertyModel->get_delete($id_property);
 
         if ($result) {
             $this->session->set_flashdata('success', 'Hapus Data, Success!');

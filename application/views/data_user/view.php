@@ -5,7 +5,7 @@
                 <div class="card">
                     <div class="card-header mt-3">
                         <h4>
-                            Data Nasabah
+                            Data User
                         </h4>
                         <div class="card-header-form">
                             <div class="input-group">
@@ -18,7 +18,7 @@
                     </div>
                     <div class="card-body">
                         <?php if ($this->session->userdata('role') == 'super_admin') { ?>
-                            <a href="<?= base_url('page_create'); ?>" class="btn btn-icon icon-left btn-success mb-3">
+                            <a href="<?= base_url('page_create_user'); ?>" class="btn btn-icon icon-left btn-success mb-3">
                                 <i class="fas fa-plus"></i> Add User
                             </a>
                         <?php } ?>
@@ -57,8 +57,8 @@
                                             </td>
                                             <?php if ($this->session->userdata('role') == 'super_admin') { ?>
                                                 <td>
-                                                    <a class="btn btn-warning" href="#">Update</a>
-                                                    <a class="btn btn-danger" href="#">Delete</a>
+                                                    <a class="btn btn-warning" href="<?php echo base_url('page_update_user/' . $row->user_id); ?>">Update</a>
+                                                    <a class="btn btn-danger" href="<?php echo base_url('delete_user/' . $row->user_id); ?>">Delete</a>
                                                 </td>
                                             <?php } ?>
                                         </tr>
