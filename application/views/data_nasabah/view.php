@@ -17,9 +17,9 @@
                         </div>
                     </div>
                     <div class="card-body">
-                            <a href="<?= base_url('page_create_user'); ?>" class="btn btn-icon icon-left btn-success mb-3">
-                                <i class="fas fa-plus"></i> Add Nasabah
-                            </a>
+                        <a href="<?= base_url('page_create_nasabah'); ?>" class="btn btn-icon icon-left btn-success mb-3">
+                            <i class="fas fa-plus"></i> Add Nasabah
+                        </a>
                         <div class="table-responsive">
                             <table class="table table-striped" id="table-1">
                                 <thead>
