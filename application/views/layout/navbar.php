@@ -199,7 +199,7 @@
                             </div>
                         </div>
                     </li>
-                    <li class="dropdown"><a href="#" data-toggle="dropdown"
+                    <li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown"
                             class="nav-link dropdown-toggle nav-link-lg nav-link-user">
                             <img alt="image"
                                 src="<?= base_url('assets/')?>template/img/user.png"
