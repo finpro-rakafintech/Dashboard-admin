@@ -199,7 +199,15 @@
                             </div>
                         </div>
                     </li>
-                    <li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown"
+                    <div class="dropdown-divider"></div>
+                            <a href="<?= site_url('LoginController');?>"
+                                class="dropdown-item has-icon text-danger"> <i
+                                    class="fas fa-sign-out-alt"></i>
+                                Logout
+                            </a>
+                        </div>
+                    </div>
+                    <!-- <li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown"
                             class="nav-link dropdown-toggle nav-link-lg nav-link-user">
                             <img alt="image"
                                 src="<?= base_url('assets/')?>template/img/user.png"
@@ -221,6 +229,6 @@
                                 Logout
                             </a>
                         </div>
-                    </li>
+                    </li> -->
                 </ul>
             </nav>

@@ -26,7 +26,7 @@
                     <div class="card card-info">
                         <div class="card-body">
                             <div class="text-center">
-                                <img src="<?= base_url('assets/'); ?>template/img/995.jpg" width="300" height="200">
+                                <img src="<?= base_url('assets/'); ?>template/img/995.jpg" width="auto" height="200">
                             </div>
                             <h6 class="card-title fw-bold mt-3"><?php echo $row->nm_product; ?></h6>
                             <div class="d-flex justify-content-between align-items-center">
