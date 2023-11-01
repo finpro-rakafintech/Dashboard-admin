@@ -17,6 +17,21 @@
                         </div>
                     </div>
                     <div class="card-body">
+                        <?php if ($this->session->flashdata('success')) : ?>
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                <?php echo $this->session->flashdata('success'); ?>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        <?php elseif ($this->session->flashdata('failed')) : ?>
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                <?php echo $this->session->flashdata('failed'); ?>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        <?php endif; ?>
                         <a href="<?= base_url('page_create_nasabah'); ?>" class="btn btn-icon icon-left btn-success mb-3">
                             <i class="fas fa-plus"></i> Add Nasabah
                         </a>
@@ -68,8 +83,8 @@
                                             </td>
                                             <?php if ($this->session->userdata('role') == 'super_admin') { ?>
                                                 <td>
-                                                    <a class="btn btn-warning" href="<?php echo base_url('page_update_user/' . $row->user_id); ?>">Update</a>
-                                                    <a class="btn btn-danger" href="<?php echo base_url('delete_user/' . $row->user_id); ?>">Delete</a>
+                                                    <a class="btn btn-warning" href="<?php echo base_url('page_update_nasabah/' . $row->nasabah_id); ?>">Update</a>
+                                                    <a class="btn btn-danger" href="<?php echo base_url('delete_nasabah/' . $row->nasabah_id); ?>">Delete</a>
                                                 </td>
                                             <?php } ?>
                                         </tr>

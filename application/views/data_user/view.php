@@ -17,6 +17,21 @@
                         </div>
                     </div>
                     <div class="card-body">
+                        <?php if ($this->session->flashdata('success')) : ?>
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                <?php echo $this->session->flashdata('success'); ?>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        <?php elseif ($this->session->flashdata('failed')) : ?>
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                <?php echo $this->session->flashdata('failed'); ?>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        <?php endif; ?>
                         <?php if ($this->session->userdata('role') == 'super_admin') { ?>
                             <a href="<?= base_url('page_create_user'); ?>" class="btn btn-icon icon-left btn-success mb-3">
                                 <i class="fas fa-plus"></i> Add User

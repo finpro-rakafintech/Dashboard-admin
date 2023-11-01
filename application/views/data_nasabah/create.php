@@ -7,25 +7,33 @@
                     <div class="card">
                         <div class="card-body">
                             <form action="create_nasabah" method="post">
+                                <?php if ($this->session->flashdata('error')) : ?>
+                                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                        <?php echo $this->session->flashdata('error'); ?>
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                <?php endif; ?>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>First Name</label>
-                                            <input type="text" class="form-control" name="firstname">
+                                            <input type="text" class="form-control" name="firstname" value="<?php echo set_value('firstname'); ?>">
                                         </div>
                                         <div class="form-group">
                                             <label>Last Name</label>
-                                            <input type="text" class="form-control" name="lastname">
+                                            <input type="text" class="form-control" name="lastname" value="<?php echo set_value('lastname'); ?>">
                                         </div>
                                         <div class="form-group">
                                             <label>Phone Number</label>
-                                            <input type="text" class="form-control" name="phone_number">
+                                            <input type="text" class="form-control" name="phone_number" value="<?php echo set_value('phone_number'); ?>">
                                         </div>
                                         <div class="form-group">
                                             <label for="user_id">User ID - Full Name</label>
-                                            <input type="text" id="searchUser" class="form-control" placeholder="Search User">
+                                            <input type="text" id="searchUser" class="form-control" placeholder="Search User by ID or Name">
                                             <select class="form-control" name="user_id" id="userDropdown">
-                                                <option value="">Select a User</option>
+                                                <option value=""></option>
                                                 <?php foreach ($users as $user) : ?>
                                                     <option value="<?= $user->user_id; ?>">
                                                         <?= $user->user_id; ?> - <?= $user->fullname; ?>
@@ -38,7 +46,7 @@
 
                                         <div class="form-group">
                                             <label>NIK</label>
-                                            <input type="text" class="form-control" name="nik">
+                                            <input type="text" class="form-control" name="nik" value="<?php echo set_value('nik'); ?>">
                                         </div>
 
                                         <button class="btn btn-success mr-1" type="submit">Submit</button>
@@ -47,19 +55,19 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>No. Kredit</label>
-                                            <input type="text" class="form-control" name="no_kredit">
+                                            <input type="text" class="form-control" name="no_kredit" value="<?php echo set_value('no_kredit'); ?>">
                                         </div>
                                         <div class="form-group">
                                             <label>NPWP</label>
-                                            <input type="text" class="form-control" name="npwp">
+                                            <input type="text" class="form-control" name="npwp" value="<?php echo set_value('npwp'); ?>">
                                         </div>
                                         <div class="form-group">
                                             <label>Income</label>
-                                            <input type="text" class="form-control" name="income">
+                                            <input type="text" class="form-control" name="income" value="<?php echo set_value('income'); ?>" onkeypress="return hanyaAngka(event)">
                                         </div>
                                         <div class="form-group">
                                             <label>Outcome</label>
-                                            <input type="text" class="form-control" name="outcome">
+                                            <input type="text" class="form-control" name="outcome" value="<?php echo set_value('outcome'); ?>" onkeypress="return hanyaAngka(event)">
                                         </div>
                                     </div>
                                 </div>
@@ -72,6 +80,14 @@
     </section>
 </div>
 
+<script>
+    function hanyaAngka(event) {
+        var angka = (event.which) ? event.which : event.keyCode
+        if (angka != 46 && angka > 31 && (angka < 48 || angka > 57))
+            return false;
+        return true;
+    }
+</script>
 <script>
     // Get the search input and user dropdown element
     const searchInput = document.getElementById("searchUser");

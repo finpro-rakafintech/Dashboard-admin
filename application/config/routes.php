@@ -18,7 +18,7 @@ $route['home'] = 'DashboardController/index';
     $route['page_update_property/(:any)'] = 'PropertyController/page_update';
     $route['update_property'] = 'PropertyController/action_edit';
 
-    $route['delete_property/(:any)'] = 'PropertyController/action_delete';
+    $route['delete_property/(:any)'] = 'PropertyController/delete';
 
 
 // Route Data User
@@ -30,7 +30,7 @@ $route['home'] = 'DashboardController/index';
     $route['page_update_user/(:any)'] = 'UserController/page_update';
     $route['update_user'] = 'UserController/action_edit';
 
-    $route['delete_user/(:any)'] = 'UserController/action_delete';
+    $route['delete_user/(:any)'] = 'UserController/delete';
 
 
 // Route Data Nasabah
@@ -42,7 +42,7 @@ $route['home'] = 'DashboardController/index';
     $route['page_update_nasabah/(:any)'] = 'NasabahController/page_update';
     $route['update_nasabah'] = 'NasabahController/action_edit';
 
-    $route['delete_nasabah/(:any)'] = 'NasabahController/action_delete';
+    $route['delete_nasabah/(:any)'] = 'NasabahController/delete';
 
 
 

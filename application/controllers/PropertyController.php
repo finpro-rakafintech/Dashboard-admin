@@ -74,26 +74,45 @@ class PropertyController extends CI_Controller{
 
     public function action_add()
     {
-        $get_input = array(
-            'nm_property' => $this->input->post('nm_property'),
-            'ls_tanah' => $this->input->post('ls_tanah'),
-            'ls_bangunan' => $this->input->post('ls_bangunan'),
-            'jum_kamartidur' => $this->input->post('jum_kamartidur'),
-            'jum_kamarmandi' => $this->input->post('jum_kamarmandi'),
-            'jum_garasi' => $this->input->post('jum_garasi'),
-            'price' => $this->input->post('price'),
-            'deskripsi' => $this->input->post('deskripsi'),
-        );
+        $this->form_validation->set_rules('nm_property', 'Nama Property', 'trim|required');
+        $this->form_validation->set_rules('ls_tanah', 'Luas Tanah', 'trim|required|numeric');
+        $this->form_validation->set_rules('ls_bangunan', 'Luas Bangunan', 'trim|required|numeric');
+        $this->form_validation->set_rules('jum_kamartidur', 'Jumlah Kamar Tidur', 'trim|required|numeric');
+        $this->form_validation->set_rules('jum_kamarmandi', 'Jumlah Kamar Mandi', 'trim|required|numeric');
+        $this->form_validation->set_rules('jum_garasi', 'Jumlah Garasi', 'trim|required|numeric');
+        $this->form_validation->set_rules('price', 'Harga', 'trim|required|numeric');
+        $this->form_validation->set_rules('deskripsi', 'Deskripsi', 'trim|required');
 
-        $result = $this->PropertyModel->get_add($get_input);
-
-        if ($result) {
-            $this->session->set_flashdata('success', 'Input Data, Success!');
+        if ($this->form_validation->run() === FALSE) {
+            // $this->session->set_flashdata('error', validation_errors());
+            // redirect('page_create_nasabah');
+            $this->load->view('layout/header');
+            $this->load->view('layout/navbar');
+            $this->load->view('layout/sidebar');
+            $this->load->view('data_property/create', $this->session->set_flashdata('error', validation_errors()));
+            $this->load->view('layout/footer');
         } else {
-            $this->session->set_flashdata('failed', 'Input Data, Failed!');
-        }
+            $get_input = array(
+                'nm_property' => $this->input->post('nm_property'),
+                'ls_tanah' => $this->input->post('ls_tanah'),
+                'ls_bangunan' => $this->input->post('ls_bangunan'),
+                'jum_kamartidur' => $this->input->post('jum_kamartidur'),
+                'jum_kamarmandi' => $this->input->post('jum_kamarmandi'),
+                'jum_garasi' => $this->input->post('jum_garasi'),
+                'price' => $this->input->post('price'),
+                'deskripsi' => $this->input->post('deskripsi'),
+            );
 
-        redirect('view_property');
+            $result = $this->PropertyModel->get_add($get_input);
+
+            if ($result) {
+                $this->session->set_flashdata('success', 'Input Data, Success!');
+            } else {
+                $this->session->set_flashdata('failed', 'Input Data, Failed!');
+            }
+
+            redirect('view_property');
+        }
     }
 
     public function page_update()
@@ -151,7 +170,7 @@ class PropertyController extends CI_Controller{
         redirect('view_property');
     }
 
-    public function action_delete()
+    public function delete()
     {
         $id_property = $this->uri->segment(2);
 
