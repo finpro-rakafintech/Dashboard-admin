@@ -28,7 +28,6 @@
                                     <tr>
                                         <th class="text-center">No.</th>
                                         <th>Email</th>
-                                        <th>Password</th>
                                         <th>Nama Lengkap</th>
                                         <th>Tgl Lahir</th>
                                         <?php if ($this->session->userdata('role') == 'super_admin') { ?>
@@ -45,9 +44,6 @@
                                             </th>
                                             <td>
                                                 <?php echo $row->email; ?>
-                                            </td>
-                                            <td>
-                                                <?php echo $row->password; ?>
                                             </td>
                                             <td>
                                                 <?php echo $row->fullname; ?>
