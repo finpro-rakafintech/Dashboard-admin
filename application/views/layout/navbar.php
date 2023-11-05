@@ -5,10 +5,6 @@
             <nav class="navbar navbar-expand-lg main-navbar sticky">
                 <div class="form-inline mr-auto">
                     <ul class="navbar-nav mr-3">
-                        <li><a href="#" data-toggle="sidebar"
-                                class="nav-link nav-link-lg
-									collapse-btn"> <i
-                                    data-feather="align-justify"></i></a></li>
                         <li><a href="#" class="nav-link nav-link-lg fullscreen-btn">
                                 <i data-feather="maximize"></i>
                             </a></li>
@@ -27,7 +23,7 @@
                     </ul>
                 </div>
                 <ul class="navbar-nav navbar-right">
-                    <li class="dropdown dropdown-list-toggle"><a href="#"
+                    <!-- <li class="dropdown dropdown-list-toggle"><a href="#"
                             data-toggle="dropdown"
                             class="nav-link nav-link-lg message-toggle"><i
                                 data-feather="mail"></i>
@@ -198,7 +194,7 @@
                                         class="fas fa-chevron-right"></i></a>
                             </div>
                         </div>
-                    </li>
+                    </li> -->
                     <div class="dropdown-divider"></div>
                             <a href="<?= site_url('LoginController');?>"
                                 class="dropdown-item has-icon text-danger"> <i

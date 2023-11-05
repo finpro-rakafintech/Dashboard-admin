@@ -1,12 +1,13 @@
 <div class="main-content">
     <section class="section">
-        <h2 class="mb-4">Tambah Data User</h2>
+        <h2 class="mb-4">Tambah Data Nasabah</h2>
         <div class="section-body">
             <div class="row justify-content-center">
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">
-                            <form action="create_user" method="post">
+                            <!-- <form action="create_nasabah" method="post"> -->
+                            <?php echo form_open_multipart('create_article'); ?>
                                 <?php if ($this->session->flashdata('error')) : ?>
                                     <div class="alert alert-warning alert-dismissible fade show" role="alert">
                                         <?php echo $this->session->flashdata('error'); ?>
@@ -18,37 +19,24 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>Email</label>
-                                            <input type="email" class="form-control" name="email">
+                                            <label>Judul Artikel</label>
+                                            <input type="text" class="form-control" name="nm_article" value="<?php echo set_value('nm_article'); ?>">
                                         </div>
                                         <div class="form-group">
-                                            <label>Password</label>
-                                            <input type="password" class="form-control" name="password">
+                                            <label>Isi Artikel</label>
+                                            <textarea id="editor" name="description"></textarea>
                                         </div>
                                         <div class="form-group">
-                                            <label>Level</label>
-                                            <select name="level" class="form-control">
-                                                <option></option>
-                                                <option value="super_admin">Super Admin</option>
-                                                <option value="admin">Admin</option>
-                                            </select>
+                                            <label>Gambar Artikel</label>
+                                            <input type="file" class="form-control" name="img_article" value="<?php echo set_value('img_article'); ?>">
                                         </div>
 
                                         <button class="btn btn-success mr-1" type="submit">Submit</button>
                                         <button class="btn btn-warning" type="reset">Reset</button>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Nama Lengkap</label>
-                                            <input type="text" class="form-control" name="fullname">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Tgl Lahir</label>
-                                            <input type="date" class="form-control" name="birthdate">
-                                        </div>
-                                    </div>
+                                    </div>  
                                 </div>
-                            </form>
+                            <!-- </form> -->
+                            <?php echo form_close(); ?>
                         </div>
                     </div>
                 </div>

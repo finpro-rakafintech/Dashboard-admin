@@ -44,6 +44,17 @@ $route['home'] = 'DashboardController/index';
 
     $route['delete_nasabah/(:any)'] = 'NasabahController/delete';
 
+// Route Data Article
+    $route['view_article'] = 'ArticleController';
+
+    $route['page_create_article'] = 'ArticleController/page_create';
+    $route['create_article'] = 'ArticleController/action_add';
+
+    $route['page_update_article/(:any)'] = 'ArticleController/page_update';
+    $route['update_create'] = 'ArticleController/action_edit';
+
+    $route['delete_nasabah/(:any)'] = 'ArticleController/delete';
+
 
 
 
