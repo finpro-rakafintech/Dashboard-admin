@@ -28,7 +28,8 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Gambar Artikel</label><br>
-                                            <input type="file" class="form-control" name="userfile" size="20" value="<?php echo set_value('userfile'); ?>">
+                                            <input type="file" name="userfile" size="20" value="<?php echo set_value('userfile'); ?>">
+                                            <p style="color: red;">*Ukuran file tidak lebih dari 2MB</p>
                                         </div>
 
                                         <button class="btn btn-success mr-1" type="submit">Submit</button>

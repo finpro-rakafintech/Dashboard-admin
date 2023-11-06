@@ -93,6 +93,88 @@ class ArticleController extends CI_Controller
         }
     }
 
+    public function page_update()
+    {
+        $id_article = $this->uri->segment(2);
+
+        $this->db->where('article_id', $id_article);
+        $cek = $this->db->get('article');
+
+        if ($cek->num_rows() > 0) {
+            foreach ($cek->result() as $row) {
+                $data = array(
+                    $this->load->view('layout/header'),
+                    $this->load->view('layout/navbar'),
+                    $this->load->view('layout/sidebar'),
+                    'article_id' => $row->article_id,
+                    'nm_article' => $row->nm_article,
+                    'description' => $row->description,
+                    'gambar' => $row->gambar,
+                );
+            }
+        }
+
+        $this->load->view('data_article/update', $data);
+        $this->load->view('layout/footer');
+    }
+
+    public function action_edit()
+    {
+        // Ambil data dari formulir edit
+        $article_id = $this->input->post('article_id');
+        $nm_article = $this->input->post('nm_article');
+        $description = $this->input->post('description');
+
+        // Inisialisasi gambar baru dan gambar lama
+        $gambar = $this->input->post('gambar');
+        $old_gambar = $this->ArticleModel->get_old_gambar($article_id);
+
+        // Memeriksa apakah ada file gambar yang diunggah
+        if ($_FILES['userfile']['name']) {
+            $config['upload_path'] = './uploads/';
+            $config['allowed_types'] = 'jpg|jpeg|png|gif';
+            $config['max_size'] = 2048; // 2MB
+
+            $this->load->library('upload', $config);
+
+            if ($this->upload->do_upload('userfile')) {
+                $upload_data = $this->upload->data();
+                $gambar = $upload_data['file_name'];
+
+                // Hapus foto lama jika ada perubahan gambar
+                if ($old_gambar) {
+                    unlink('./uploads/' . $old_gambar);
+                }
+            } else {
+                $error = $this->upload->display_errors();
+                $this->session->set_flashdata('error', $error);
+                redirect('view_article');
+            }
+        }
+
+        // Jika tidak ada perubahan gambar, gunakan gambar lama
+        if (!$gambar) {
+            $gambar = $old_gambar;
+        }
+
+        // Data untuk diupdate
+        $data = array(
+            'nm_article' => $nm_article,
+            'description' => $description,
+            'gambar' => $gambar,
+        );
+
+        $result = $this->ArticleModel->get_edit($article_id, $data);
+
+        if ($result) {
+            $this->session->set_flashdata('success', 'Update Data, Success!');
+        } else {
+            $this->session->set_flashdata('success', 'Update Data, Success!');
+        }
+
+        redirect('view_article');
+    }
+
     public function delete()
     {
         $id_article = $this->uri->segment(2);

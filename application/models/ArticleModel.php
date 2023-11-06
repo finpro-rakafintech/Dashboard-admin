@@ -33,6 +33,26 @@ class ArticleModel extends CI_Model
         return $this->db->get('article')->row();
     }
 
+    public function get_old_gambar($article_id)
+    {
+        $this->db->select('gambar');
+        $this->db->where('article_id', $article_id);
+        $result = $this->db->get('article')->row();
+
+        if ($result) {
+            return $result->gambar;
+        } else {
+            return null;
+        }
+    }
+
+    public function get_edit($article_id, $data)
+    {
+        $this->db->where('article_id', $article_id);
+        $this->db->update('article', $data);
+
+        return $this->db->affected_rows() > 0;
+    }
 
     public function get_delete($id_article)
     {

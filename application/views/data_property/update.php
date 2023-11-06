@@ -1,6 +1,6 @@
 <div class="main-content">
     <section class="section">
-        <h2 class="mb-4">Edit Data Properti</h2>
+        <h2 class="mb-4">Edit Data Property</h2>
         <div class="section-body">
             <div class="row justify-content-center">
                 <div class="col-12">
