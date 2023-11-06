@@ -11,9 +11,9 @@ class ArticleModel extends CI_Model
     public function get_add($get_input)
     {
         $data = array(
-            'nm_article' => $this->input->post($get_input['nm_article']),
-            'description' => $this->input->post($get_input['description']),
-            'img_article' => $this->input->post($get_input['img_article'])
+            'nm_article' => $get_input['nm_article'],
+            'description' => $get_input['description'],
+            'gambar' => $get_input['gambar']
         );
 
         $this->db->where($data);
@@ -26,7 +26,27 @@ class ArticleModel extends CI_Model
             return 1;
         }
     }
+
+    public function get_article_by_id($id_article)
+    {
+        $this->db->where('article_id', $id_article);
+        return $this->db->get('article')->row();
+    }
+
+
+    public function get_delete($id_article)
+    {
+        $cek['article_id'] = $id_article;
+
+        $this->db->where($cek);
+        $query = $this->db->get('article');
+
+        if ($query->num_rows() > 0) {
+            $this->db->where($cek);
+            $this->db->delete('article');
+            return 1;
+        } else {
+            return 0;
+        }
+    }
 }
-
-
-?>

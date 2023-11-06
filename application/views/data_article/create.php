@@ -1,12 +1,12 @@
 <div class="main-content">
     <section class="section">
-        <h2 class="mb-4">Tambah Data Nasabah</h2>
+        <h2 class="mb-4">Tambah Data Article</h2>
         <div class="section-body">
             <div class="row justify-content-center">
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">
-                            <!-- <form action="create_nasabah" method="post"> -->
+                            <!-- <form action="create_article" method="post" enctype="multipart/form-data"> -->
                             <?php echo form_open_multipart('create_article'); ?>
                                 <?php if ($this->session->flashdata('error')) : ?>
                                     <div class="alert alert-warning alert-dismissible fade show" role="alert">
@@ -24,19 +24,20 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Isi Artikel</label>
-                                            <textarea id="editor" name="description"></textarea>
+                                            <textarea id="editor" name="description"><?php echo set_value('description'); ?></textarea>
                                         </div>
                                         <div class="form-group">
-                                            <label>Gambar Artikel</label>
-                                            <input type="file" class="form-control" name="img_article" value="<?php echo set_value('img_article'); ?>">
+                                            <label>Gambar Artikel</label><br>
+                                            <input type="file" class="form-control" name="userfile" size="20" value="<?php echo set_value('userfile'); ?>">
                                         </div>
 
                                         <button class="btn btn-success mr-1" type="submit">Submit</button>
-                                        <button class="btn btn-warning" type="reset">Reset</button>
+                                        <a href="page_create_article" class="btn btn-warning">Reset</a>
+                                        <!-- <button class="btn btn-warning" type="reset">Reset</button> -->
                                     </div>  
                                 </div>
-                            <!-- </form> -->
                             <?php echo form_close(); ?>
+                            <!-- </form> -->
                         </div>
                     </div>
                 </div>

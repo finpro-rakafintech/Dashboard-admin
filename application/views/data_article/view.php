@@ -58,7 +58,7 @@
                                                 <?php echo $row->nm_article; ?>
                                             </td>
                                             <td>
-                                                <img src="<?php echo base_url(); ?>assets/public/img_article/<?php echo $row->img_article ?>" alt="" width="472" height="354">
+                                                <img src="<?php echo base_url() . '/uploads/' . $row->gambar; ?>" alt="" width="100">
                                             </td>
                                             <?php if ($this->session->userdata('role') == 'super_admin') { ?>
                                                 <td>

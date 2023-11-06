@@ -15,10 +15,11 @@ class ArticleController extends CI_Controller
 
         $this->load->library('pagination');
         $this->load->library('form_validation');
-        $this->load->library('upload');
+        $this->load->helper(array('form', 'url'));
+        // $this->load->library('upload');
         $this->load->model('ArticleModel');
     }
-    
+
     public function index()
     {
         $get_article = $this->ArticleModel->getArticle();
@@ -31,7 +32,7 @@ class ArticleController extends CI_Controller
         );
 
         $this->load->view('data_article/view', $include);
-        $this->load->view('layout/footer');    
+        $this->load->view('layout/footer');
     }
 
     public function page_create()
@@ -48,38 +49,36 @@ class ArticleController extends CI_Controller
 
     public function action_add()
     {
-        $this->form_validation->set_rules('nm_article', 'Judul Artikel', 'required');
+        $this->form_validation->set_rules('nm_article', 'Judul Artikel', 'required|max_length[50]');
         $this->form_validation->set_rules('description', 'Isi Artikel', 'required');
-        $this->form_validation->set_rules('img_article', 'Gambar Artikel', 'required');
+        $this->form_validation->set_rules('userfile', 'Gambar Artikel', 'required|image');
 
-        if ($this->form_validation->run() === FALSE) {
+        if ($this->form_validation->run() == FALSE) {
             $this->load->view('layout/header');
             $this->load->view('layout/navbar');
             $this->load->view('layout/sidebar');
             $this->load->view('data_article/create', $this->session->set_flashdata('error', validation_errors()));
             $this->load->view('layout/footer');
+        }
+
+        $config['upload_path']          = './uploads/';
+        $config['allowed_types']        = 'gif|jpg|png|jpeg';
+        $config['max_size']             = 2048;
+        $config['max_width']            = 10000;
+        $config['max_height']           = 10000;
+
+        $this->load->library('upload', $config);
+
+        if (!$this->upload->do_upload('userfile')) {
+            echo "Gagal";
         } else {
-            $img_article = $_FILES['img_article'];
-
-            if ($img_article = '') {
-                
-            } else {
-                $config['upload_path'] = '.assets/public/gambar_article';
-                $config['allowed_types'] = 'jpg|png';
-
-                $this->load->library('upload', $config);
-                if (!$this->upload->do_upload('img_article')) {
-                    echo "Upload Gagal";
-                    die();
-                } else {
-                    $img_article = $this->upload->data('file_name');
-                }
-            }
+            $gambar = $this->upload->data();
+            $gambar = $gambar['file_name'];
 
             $get_input = array(
                 'nm_article' => $this->input->post('nm_article'),
                 'description' => $this->input->post('description'),
-                'img_article' => $img_article,
+                'gambar' => $gambar
             );
 
             $result = $this->ArticleModel->get_add($get_input);
@@ -93,7 +92,32 @@ class ArticleController extends CI_Controller
             redirect('view_article');
         }
     }
+
+    public function delete()
+    {
+        $id_article = $this->uri->segment(2);
+        $article = $this->ArticleModel->get_article_by_id($id_article);
+
+        if ($article) {
+            // Hapus file gambar terkait
+            $gambar = $article->gambar;
+            $img_path = './uploads/' . $gambar;
+            if (file_exists($img_path)) {
+                unlink($img_path);
+            }
+
+            // Hapus entri artikel dari database
+            $result = $this->ArticleModel->get_delete($id_article);
+
+            if ($result) {
+                $this->session->set_flashdata('success', 'Hapus Data, Success!');
+            } else {
+                $this->session->set_flashdata('failed', 'Hapus Data, Failed!');
+            }
+        } else {
+            $this->session->set_flashdata('failed', 'Artikel tidak ditemukan.');
+        }
+
+        redirect('view_article');
+    }
 }
-
-
-?>

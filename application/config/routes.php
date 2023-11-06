@@ -51,9 +51,9 @@ $route['home'] = 'DashboardController/index';
     $route['create_article'] = 'ArticleController/action_add';
 
     $route['page_update_article/(:any)'] = 'ArticleController/page_update';
-    $route['update_create'] = 'ArticleController/action_edit';
+    $route['update_article'] = 'ArticleController/action_edit';
 
-    $route['delete_nasabah/(:any)'] = 'ArticleController/delete';
+    $route['delete_article/(:any)'] = 'ArticleController/delete';
 
 
 

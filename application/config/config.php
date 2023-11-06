@@ -26,6 +26,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $config['base_url']  = "http://".$_SERVER['HTTP_HOST'];
 $config['base_url'] .= preg_replace('@/+$@', '', dirname($_SERVER['SCRIPT_NAME'])).'/';
 
+// Konfigurasi Upload Gambar
+$config['upload_path'] = './assets/uploads/';
+$config['allowed_types'] = 'jpg|jpeg|png';
+$config['max_size'] = 30000;
+$config['max_width'] = 1920;
+$config['max_height'] = 1080;
+
 /*
 |--------------------------------------------------------------------------
 | Index File

@@ -35,7 +35,7 @@
                                             <select class="form-control" name="user_id" id="userDropdown">
                                                 <option value=""></option>
                                                 <?php foreach ($users as $user) : ?>
-                                                    <option value="<?= $user->user_id; ?>">
+                                                    <option value="<?= $user->user_id; ?>" <?php echo set_select('user_id', $user->user_id); ?>>
                                                         <?= $user->user_id; ?> - <?= $user->fullname; ?>
                                                     </option>
                                                 <?php endforeach; ?>
@@ -50,7 +50,8 @@
                                         </div>
 
                                         <button class="btn btn-success mr-1" type="submit">Submit</button>
-                                        <button class="btn btn-warning" type="reset">Reset</button>
+                                        <a href="page_create_nasabah" class="btn btn-warning">Reset</a>
+                                        <!-- <button class="btn btn-warning" type="reset">Reset</button> -->
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
