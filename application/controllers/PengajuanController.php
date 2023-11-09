@@ -33,9 +33,30 @@ class PengajuanController extends CI_Controller
         $this->load->view('layout/footer');
     }
 
-    public function detail()
+
+    public function detail_pengajuan($order_id)
     {
+        $data['detail'] = $this->PengajuanModel->getPengajuanDetail($order_id);
+
+        if (!$data['detail']) {
+            // Handle case where no data is found
+            // You can redirect or show an error message
+            // For now, let's redirect to the main page
+            redirect('pengajuan');
+        }
+
+        // Load the view to display the detailed information
+        $include = array(
+            'header' => $this->load->view('layout/header'),
+            'navbar' => $this->load->view('layout/navbar'),
+            'sidebar' => $this->load->view('layout/sidebar'),
+            'detail' => $data['detail'],
+        );
+
+        $this->load->view('data_pengajuan/detail', $include);
+        $this->load->view('layout/footer');
     }
+
 
     public function page_update()
     {
