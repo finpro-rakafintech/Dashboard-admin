@@ -86,4 +86,29 @@ class PengajuanController extends CI_Controller
         $this->load->view('data_pengajuan/update', $data);
         $this->load->view('layout/footer');
     }
+    // PengajuanController
+    // PengajuanController
+    public function process_pengajuan($order_id)
+    {
+        if ($this->session->userdata('role') != 'super_admin') {
+            redirect('detail_pengajuan'); // Redirect if the user is not a super admin
+        }
+
+        $action = $this->input->post('action'); // Get the submitted action
+
+        // Make sure the action is one of the valid order_status values
+        $valid_actions = array('diterima', 'ditolak');
+        if (in_array($action, $valid_actions)) {
+            // Valid action, update the order_status
+            $data = array('order_status' => $action);
+            $this->db->where('order_id', $order_id);
+            $this->db->update('purchase', $data);
+
+            // Redirect to the detail_pengajuan page
+            redirect('detail_pengajuan/' . $order_id);
+        } else {
+            // Invalid action, handle accordingly
+            redirect('detail_pengajuan');
+        }
+    }
 }

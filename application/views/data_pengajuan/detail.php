@@ -6,6 +6,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header mt-3">
+                        <a href="<?= base_url('view_pengajuan'); ?>" class="btn btn-secondary">Back</a>
                         <h4>Detail Pengajuan KPR</h4>
                     </div>
                     <div class="card-body">
@@ -62,6 +63,16 @@
                                 </tr>
                                 <!-- Add more product details as needed -->
                             </table>
+                        </div>
+                        <div class="mt-3">
+                            <?php if ($this->session->userdata('role') == 'super_admin') { ?>
+                                <form action="<?= base_url('PengajuanController/process_pengajuan/' . $detail->order_id); ?>" method="post">
+                                    <button type="submit" name="action" value="diterima" class="btn btn-success">Diterima</button>
+                                    <button type="submit" name="action" value="ditolak" class="btn btn-danger">Ditolak</button>
+                                </form>
+
+
+                            <?php } ?>
                         </div>
                     </div>
                 </div>

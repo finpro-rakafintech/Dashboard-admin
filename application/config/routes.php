@@ -67,6 +67,8 @@ $route['page_update_pengajuan/(:any)'] = 'PengajuanController/page_update';
 $route['update_pengajuan'] = 'PengajuanController/action_edit';
 
 $route['delete_pengajuan/(:any)'] = 'PengajuanController/delete';
+$routes['process_pengajuan/(:any)'] = 'PengajuanController/process_pengajuan/$1';
+
 
 
 
