@@ -1,9 +1,10 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class LoginController extends CI_Controller{
+class LoginController extends CI_Controller
+{
 
-    public function __construct()
+	public function __construct()
 	{
 		parent::__construct();
 		$this->load->model('LoginModel');
@@ -12,11 +13,12 @@ class LoginController extends CI_Controller{
 	}
 
 
-    public function index() {
+	public function index()
+	{
 		$this->load->view('layout/header');
-        $this->load->view('auth/login');
+		$this->load->view('auth/login');
 		$this->load->view('layout/footer');
-    }
+	}
 
 
 	public function login()
@@ -52,25 +54,29 @@ class LoginController extends CI_Controller{
 				}
 			} else {
 				// Password salah
-				$url = base_url();
+				// $url = base_url();
 				echo $this->session->set_flashdata('msg', 'Email atau Password Salah');
-				redirect($url);
+				// redirect($url);
+				$this->load->view('layout/header');
+				$this->load->view('auth/login');
+				$this->load->view('layout/footer');
 			}
 		} else {
 			// Email tidak ditemukan
-			$url = base_url();
+			// $url = base_url();
 			echo $this->session->set_flashdata('msg', 'Email Tidak Ditemukan');
-			redirect($url);
+			// redirect($url);
+			$this->load->view('layout/header');
+			$this->load->view('auth/login');
+			$this->load->view('layout/footer');
 		}
 	}
 
-	public function logout(){
+	public function logout()
+	{
 		$this->session->sess_destroy();
-		
+
 		$url = base_url();
 		redirect($url);
 	}
-	
 }
-
-?>

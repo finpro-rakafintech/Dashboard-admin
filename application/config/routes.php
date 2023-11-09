@@ -55,6 +55,17 @@ $route['home'] = 'DashboardController/index';
 
     $route['delete_article/(:any)'] = 'ArticleController/delete';
 
+// Route Data Pengajuan
+    $route['view_pengajuan'] = 'PengajuanController';
+    $route['detail_pengajuan'] = "PengajuanController/detail";
+
+    $route['page_create_pengajuan'] = 'PengajuanController/page_create';
+    $route['create_pengajuan'] = 'PengajuanController/action_add';
+
+    $route['page_update_pengajuan/(:any)'] = 'PengajuanController/page_update';
+    $route['update_pengajuan'] = 'PengajuanController/action_edit';
+
+    $route['delete_pengajuan/(:any)'] = 'PengajuanController/delete';
 
 
 
