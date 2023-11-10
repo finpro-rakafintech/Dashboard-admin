@@ -32,13 +32,11 @@
                                 </button>
                             </div>
                         <?php endif; ?>
-                        <a href="<?= base_url('page_create_nasabah'); ?>" class="btn btn-icon icon-left btn-success mb-3">
-                            <i class="fas fa-plus"></i> Add Nasabah
-                        </a>
+                    
                         <div class="table-responsive">
                             <table class="table table-striped" id="table-1">
                                 <thead>
-                                    <tr>
+                                    <tr class="text-center">
                                         <th class="text-center">No.</th>
                                         <th>Nama Lengkap</th>
                                         <th>Phone Number</th>
@@ -55,7 +53,7 @@
                                 <tbody>
                                     <?php $no = 1;
                                     foreach ($v_nasabah->result() as $row) { ?>
-                                        <tr>
+                                        <tr class="text-center">
                                             <th scope="row">
                                                 <?php echo $no++; ?>
                                             </th>

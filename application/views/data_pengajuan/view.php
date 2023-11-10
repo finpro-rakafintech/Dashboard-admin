@@ -32,9 +32,7 @@
                                 </button>
                             </div>
                         <?php endif; ?>
-                        <a href="<?= base_url('page_create_pengajuan'); ?>" class="btn btn-icon icon-left btn-success mb-3">
-                            <i class="fas fa-plus"></i> Add Pengajuan
-                        </a>
+
                         <div class="table-responsive">
                             <table class="table table-striped" id="table-1">
                                 <thead>
@@ -44,9 +42,7 @@
                                         <th>Tgl Pengajuan</th>
                                         <th>Tgl Diterima</th>
                                         <th>Status</th>
-                                        <?php if ($this->session->userdata('role') == 'super_admin') { ?>
-                                            <th>Action</th>
-                                        <?php } ?>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -72,8 +68,11 @@
                                             <?php if ($this->session->userdata('role') == 'super_admin') { ?>
                                                 <td>
                                                     <a class="btn btn-primary" href="<?php echo base_url('detail_pengajuan/' . $row->order_id); ?>"><i class="fas fa-info-circle"></i> Detail</a>
-                                                    <a class="btn btn-warning" href="<?php echo base_url('page_update_pengajuan/' . $row->order_id); ?>">Update</a>
                                                     <a class="btn btn-danger" href="<?php echo base_url('delete_pengajuan/' . $row->order_id); ?>">Delete</a>
+                                                </td>
+                                            <?php } else { ?>
+                                                <td>
+                                                    <a class="btn btn-primary" href="<?php echo base_url('detail_pengajuan/' . $row->order_id); ?>"><i class="fas fa-info-circle"></i> Detail</a>
                                                 </td>
                                             <?php } ?>
                                         </tr>

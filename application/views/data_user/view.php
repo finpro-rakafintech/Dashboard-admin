@@ -40,7 +40,7 @@
                         <div class="table-responsive">
                             <table class="table table-striped" id="table-1">
                                 <thead>
-                                    <tr>
+                                    <tr class="text-center">
                                         <th class="text-center">No.</th>
                                         <th>Email</th>
                                         <th>Nama Lengkap</th>
@@ -53,7 +53,7 @@
                                 <tbody>
                                     <?php $no = 1;
                                     foreach ($v_user->result() as $row) { ?>
-                                        <tr>
+                                        <tr class="text-center">
                                             <th scope="row">
                                                 <?php echo $no++; ?>
                                             </th>
