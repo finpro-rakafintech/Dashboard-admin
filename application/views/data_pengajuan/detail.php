@@ -65,14 +65,10 @@
                             </table>
                         </div>
                         <div class="mt-3">
-                            <?php if ($this->session->userdata('role') == 'super_admin') { ?>
                                 <form action="<?= base_url('PengajuanController/process_pengajuan/' . $detail->order_id); ?>" method="post">
                                     <button type="submit" name="action" value="diterima" class="btn btn-success">Diterima</button>
                                     <button type="submit" name="action" value="ditolak" class="btn btn-danger">Ditolak</button>
                                 </form>
-
-
-                            <?php } ?>
                         </div>
                     </div>
                 </div>
