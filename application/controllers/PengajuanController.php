@@ -86,8 +86,7 @@ class PengajuanController extends CI_Controller
         $this->load->view('data_pengajuan/update', $data);
         $this->load->view('layout/footer');
     }
-    // PengajuanController
-    // PengajuanController
+
     public function process_pengajuan($order_id)
     {
 
