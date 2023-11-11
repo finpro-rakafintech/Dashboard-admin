@@ -50,7 +50,7 @@ class UserController extends CI_Controller
         $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|is_unique[users.email]');
         $this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[5]');
         $this->form_validation->set_rules('level', 'Level', 'required');
-        $this->form_validation->set_rules('fullname', 'Nama Lengkap', 'trim|required|alpha');
+        $this->form_validation->set_rules('fullname', 'Nama Lengkap', 'required');
         $this->form_validation->set_rules('birthdate', 'Tanggal Lahir', 'required');
         if ($this->form_validation->run() === FALSE) {
             // $this->session->set_flashdata('error', validation_errors());
