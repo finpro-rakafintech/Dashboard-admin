@@ -111,4 +111,18 @@ class PengajuanController extends CI_Controller
             redirect('detail_pengajuan');
         }
     }
+
+    public function delete()
+    {
+        $id_pengajuan = $this->uri->segment(2);
+        $result = $this->PengajuanModel->get_delete($id_pengajuan);
+
+        if ($result) {
+            $this->session->set_flashdata('success', 'Hapus Data, Success!');
+        } else {
+            $this->session->set_flashdata('failed', 'Hapus Data, Failed!');
+        }
+
+        redirect('view_pengajuan');
+    }
 }

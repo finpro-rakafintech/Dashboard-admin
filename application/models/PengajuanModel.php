@@ -34,4 +34,20 @@ class PengajuanModel extends CI_Model
             return new stdClass();
         }
     }
+
+    public function get_delete($id_pengajuan)
+    {
+        $cek['order_id']	= $id_pengajuan;
+
+		$this->db->where($cek);
+		$query = $this->db->get('purchase');
+
+		if($query->num_rows() > 0){
+			$this->db->where($cek);
+			$this->db->delete('purchase');
+			return 1;
+		}else{
+			return 0;
+		}
+    }
 }
